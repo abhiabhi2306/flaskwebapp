@@ -1,0 +1,35 @@
+{% extends 'layout2.html' %}
+
+{% block body %}
+  <h3 style="color:blue;">Dashboard<small></h1>
+  </br>
+  <center><h2> There are no articles available at the moment </h2></center>
+   <a class="btn btn-success" href="/create_thread"> Create thread</a>
+  <hr>
+  <table class="table table-striped">
+    <tr>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+    </tr>
+    {% for article in articles %}
+      <tr>
+        <td>{{article.id}}</td>
+        <td>{{article.title}}</td>
+        <td>{{article.author}}</td>
+        <td>{{article.create_date}}</td>
+        <td><a href="edit_article/{{article.id}}" class="btn btn-default pull-right">Buy</a></td>
+        <td>
+          <form action="{{url_for('delete_article', id=article.id)}}" method="post">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" value="Process" class="btn btn-danger">
+          </form>
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+        <h5 style="color:green"><center>You are currently logged in as --> <small> [{{ session.username }}] </small> <--- </center></h5>
+{% endblock %}

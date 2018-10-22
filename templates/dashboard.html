@@ -1,0 +1,34 @@
+{% extends 'layout2.html' %}
+
+{% block body %}
+  <h1>Dashboard - <small> Welcome, {{session.username}}</small></h1>
+  <a class="btn btn-success" href="/create_thread"> Create thread</a>
+  <a class="btn btn-danger" href="/threads"> View All</a>
+
+  <hr>
+  <table class="table table-striped">
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+    </tr>
+    {% for thread in threads %}
+      <tr>
+        <td>{{thread.0}}</td>
+        <td>{{thread.1}}</td>
+        <td>{{thread.3}}</td>
+        <td>{{thread.4}}</td>
+        <td><a href="edit_thread/{{thread.0}}" class="btn btn-default pull-right">Edit</a></td>
+        <td>
+          <form action="{{url_for('delete_thread', id=thread.0)}}" method="post">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" value="Delete" class="btn btn-danger">
+          </form>
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

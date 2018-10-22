@@ -1,0 +1,11 @@
+{% extends 'layout2.html' %}
+
+{% block body %}
+  <h1>{{threads.1}}</h1>
+
+  <small>Written by {{threads.3}} on {{threads.4}}</small>
+  <hr>
+  <div>
+    {{threads.2 | safe}}
+  </div>
+{% endblock %}
