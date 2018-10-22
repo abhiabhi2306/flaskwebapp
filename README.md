@@ -31,7 +31,7 @@ Install The Required Flask Dependencies using pip.
 
     pip install flask
     pip install flaskext.mysql
-    pip install passlib.hash
+    pip install functools
 
 - Copy app.py or download it from source repository
 - Configure database credentials and parameters 
