@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /edit_thread
+Disallow: /delete_thread
+Disallow: /thread/<string:id>/
