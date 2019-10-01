@@ -24,6 +24,9 @@ This is a simple web application using [Python Flask](http://flask.pocoo.org/) a
 
     apt-get install -y python python-setuptools python-dev build-essential python-pip python-mysqldb
 
+  Else run
+  
+  ``$ bash run.sh``
    
 ## 2. Install and Configure Web Server
 
@@ -39,7 +42,7 @@ Install The Required Flask Dependencies using pip.
 Start web server
 
     FLASK_APP=app.py flask run --host=0.0.0.0
-    
+
 ## 4. Visit the web application.
 
 Open a browser and go to URL
