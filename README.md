@@ -29,9 +29,7 @@ This is a simple web application using [Python Flask](http://flask.pocoo.org/) a
 
 Install The Required Flask Dependencies using pip.
 
-    pip install flask
-    pip install flaskext.mysql
-    pip install functools
+    pip -r install requirements.txt
 
 - Copy app.py or download it from source repository
 - Configure database credentials and parameters 
