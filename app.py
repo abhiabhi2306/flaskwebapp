@@ -208,7 +208,9 @@ def thread(id):
 
     return render_template('thread.html', threads=threads)
 
-
+@app.route("/robots.txt")
+def robots_txt():
+    return render_template("robots.txt")
 
 
 
